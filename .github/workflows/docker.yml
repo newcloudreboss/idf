@@ -1,8 +1,6 @@
 name: docker
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-
 on:
   push:
     branches:
@@ -10,13 +8,12 @@ on:
       - 'release/*'
     tags:
       - 'v*.*'
-
 env:
   # Platforms to build the image for
   BUILD_PLATFORMS: linux/amd64,linux/arm64
   DOCKERHUB_REPO: ${{ github.repository_owner }}/idf
-
 jobs:
+ 
   docker:
     # Disable the job in forks
     if: ${{ github.repository_owner == 'espressif' }}
