@@ -1,4 +1,4 @@
-name: docker
+{}name: docker
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 on:
